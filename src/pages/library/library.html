@@ -1,0 +1,29 @@
+<!--
+  Generated template for the LibraryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Biblioteca de Frases</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3 text-center>Selecciona tu frase favorita</h3>
+  <ion-list>
+    <button 
+      ion-item 
+      *ngFor="let category of quoteCollection"
+      [navPush]="quotesPage" [navParams]="category"
+    >
+      <ion-icon [name]="category.icon" item-left></ion-icon>
+      <h2>{{category.category | uppercase }}</h2>
+      <p>{{category.quotes.length}} quotes</p>
+    </button>
+  </ion-list>
+</ion-content>
