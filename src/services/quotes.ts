@@ -19,4 +19,11 @@ export class QuotesService {
     getFavorites(){
         return this.favoriteQuotes.slice();
     }
+
+    IsFavorite(quote: Quote){
+        const pos = this.favoriteQuotes.findIndex((q:Quote) => {
+            return q.id == quote.id;
+        });
+        return pos >= 0;
+    }
 }

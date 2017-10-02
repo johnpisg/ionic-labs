@@ -44,4 +44,9 @@ export class FavoritesPage implements OnInit {
       }
     });
   }
+
+  onRemoveFromFavorites(quote:Quote){
+    this.quotesSvr.removeFromFavorites(quote);
+    this.favoritas = this.quotesSvr.getFavorites();
+  }
 }

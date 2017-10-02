@@ -15,10 +15,16 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let quote of favoritas; let i = index;"
-    (click)="onViewQuote(quote)">
-      <p>{{quote.text}}</p>
-      <p class="author">{{quote.person}}</p>    
-    </ion-item>
+    <ion-item-sliding 
+      *ngFor="let quote of favoritas; let i = index;">
+        <ion-item 
+        (click)="onViewQuote(quote)">
+          <p>{{quote.text}}</p>
+          <p class="author">{{quote.person}}</p>    
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="danger" (click)="onRemoveFromFavorites(quote)">Quitar</button>    
+        </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
